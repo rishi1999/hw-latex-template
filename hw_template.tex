@@ -16,77 +16,105 @@
 
 
 
-\documentclass{article}
+\documentclass[letterpaper]{article}
 
-\usepackage{mathtools} % loads amsmath
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{fancyvrb}
-\usepackage{listings}
-\renewcommand{\lstlistingname}{Algorithm}
-\usepackage{fancyhdr}
 
-\usepackage{geometry}
-\geometry{letterpaper, left=1in, right=1in}
+%% Compatibility & formatting %%
+\usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better
+\usepackage{lmodern}  % improves display of text
+\usepackage[utf8]{inputenc}  % allows LaTeX to process non-ASCII characters correctly
+\usepackage[english]{babel}  % sets language to American English
 
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{Rishi Advani}
-\chead{MATH [insert class number] --- Homework [insert hw number]}
-\rhead{[insert date]} % e.g. "January 1, 2020"
-% \lfoot{Collaborators: N/A}
-% \renewcommand{\footrulewidth}{0.5pt}
+\usepackage{geometry}  % useful for setting page dimensions and layout
+\geometry{left=1in, right=1in}
+\usepackage{microtype}  % improves typographic details (e.g., kerning)
 
-\setlength{\parindent}{0pt}
 
+%% Images %%
+\usepackage{graphicx}  % allows inclusion of images in document
+\graphicspath{{./images/}}  % location of images in file system
+
+% Example:
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=0.5\textwidth]{p1_1}
+%\caption{[insert caption]}
+%\label{p1_relevantname}
+%\end{figure}
+
+
+%% Math %%
+\usepackage{mathtools,amssymb,amsthm}  % mathtools loads amsmath
+
+\newcommand{\Complex}{\mathbb{C}}
 \newcommand{\Reals}{\mathbb{R}}
 \newcommand{\Rationals}{\mathbb{Q}}
 \newcommand{\Integers}{\mathbb{Z}}
 \newcommand{\Naturals}{\mathbb{N}}
+%\DeclareMathOperator{\E}{\mathbb{E}}
+
+% Use \set for set notation. Starred version \set* automatically resizes with contents.
+\DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\,\def\suchthat{\;\delimsize|\;}#1\,}
+% Example:
+%$\set{x \suchthat x > 0}$
 
 
+%% Algorithms %%
+\usepackage{fancyvrb}
+\usepackage[usenames]{xcolor}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Algorithm}
 \lstset{
-    language=Python,
-    frame=single,
-    commentstyle=\color{gray},
-    keywordstyle=\color{blue},
-    stringstyle=\color{codegreen},
-    basicstyle=\ttfamily,
-    showstringspaces=false
+	language=Python,
+	frame=single,
+	morekeywords={True,False},
+	commentstyle=\color{gray},
+	keywordstyle=\color{blue},
+	stringstyle=\color{red},
+	basicstyle=\small\ttfamily,
+	showstringspaces=false,
+	rulecolor=\color{black}
 }
 
-
 % Example:
-%\begin{listing}[title=My Title, label=my_label, float=htbp] ...
+%\begin{lstlisting}[title=My Title, label=my_label, float=htbp]
+%	print("Hello World!")
+%\end{lstlisting}
 
+
+%% Fancy header %%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{Rishi Advani}
+\fancyhead[C]{MATH [todo class number] --- Homework [todo hw number]}
+\fancyhead[R]{[todo date]}  % e.g., "January 1, 2020"
+\fancyfoot{}
+%\fancyfoot[L]{Collaborators: N/A}
+%\renewcommand{\footrulewidth}{0.5pt}
+
+
+%% Alternate indentation style %%
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{1em}
+
+
+%% Dummy text %%
+\usepackage{blindtext}
+
+
+%% Enables hyperlinks %%
+\usepackage{hyperref}  % load last!
 
 
 \begin{document}
-\pagenumbering{gobble}
-\setlength{\parskip}{1em}
-\lstset{showstringspaces=false}
+
+% Check if command `CommandName` is already defined
+%\ifdefined\CommandName defined\else undefined\fi
+
 
 \begin{enumerate}
 	\item
-	
-	todo
-	
-	\item
-	
-	todo
-	
-	\item
-	
-	todo
-	
-	\item
-	
-	todo
-	
-	\item
-	
-	todo
+	\blindtext
 	
 \end{enumerate}
 
