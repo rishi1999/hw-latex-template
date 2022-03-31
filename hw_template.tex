@@ -35,7 +35,7 @@
 \graphicspath{{./images/}}  % location of images in file system
 
 % Example:
-%\begin{figure}[ht]
+%\begin{figure}[htbp]
 %\centering
 %\includegraphics[width=0.8\linewidth]{p1_1}
 %\caption{[insert caption]}
@@ -46,24 +46,42 @@
 %% Math %%
 \usepackage{mathtools,amssymb,amsthm}  % mathtools loads amsmath
 
-\newcommand{\Complex}{\mathbb{C}}
-\newcommand{\Reals}{\mathbb{R}}
-\newcommand{\Rationals}{\mathbb{Q}}
-\newcommand{\Integers}{\mathbb{Z}}
-\newcommand{\Naturals}{\mathbb{N}}
-%\DeclareMathOperator{\E}{\mathbb{E}}
+\mathchardef\mhyphen="2D  % hyphen for math mode (credit to Gernot Salzer)
+
+\newcommand*{\Complex}{\mathbb{C}}
+\newcommand*{\Reals}{\mathbb{R}}
+\newcommand*{\Rationals}{\mathbb{Q}}
+\newcommand*{\Integers}{\mathbb{Z}}
+\newcommand*{\Naturals}{\mathbb{N}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 % Use \set for set notation. Starred version \set* automatically resizes with contents.
 \DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\,\def\suchthat{\;\delimsize|\;}#1\,}
 % Example:
-%$\set{x \suchthat x > 0}$
+% $\set{x \suchthat x > 0}$
+
+
+%% Graphs %%
+\usepackage[usenames]{xcolor}  % for listings package color settings; load before tikz
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 
 %% Algorithms %%
+\usepackage{algorithm}  % needed to float algorithms
+\usepackage{algpseudocode}  % loads algorithmicx package as well
+\newcommand*{\algorithmautorefname}{Algorithm}  % for hyperref's autoref macro
+
+% Use \LongState to replace \State when the contents of the line overflow. This preserves the indentation level of the first line.
+\newcommand*{\LongState}[2]{\State\parbox[t]{\dimexpr\linewidth-\dimexpr\algorithmicindent*#1}{#2\strut}}  % inspired by a macro designed by TeX.SX user Werner
+% Example:
+% \LongState{2}{very long line that needs to be indented 2 levels}
+
 \usepackage{fancyvrb}
-\usepackage[usenames]{xcolor}
 \usepackage{listings}
-\renewcommand{\lstlistingname}{Algorithm}
+\renewcommand*{\lstlistingname}{Algorithm}
 \lstset{
 	language=Python,
 	frame=single,
@@ -90,7 +108,7 @@
 \fancyhead[R]{[todo date]}  % e.g., "January 10, 1938"
 \fancyfoot{}
 %\fancyfoot[L]{Collaborators: N/A}
-%\renewcommand{\footrulewidth}{0.5pt}
+%\renewcommand*{\footrulewidth}{0.5pt}
 
 
 %% Alternate indentation style %%
