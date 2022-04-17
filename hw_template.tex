@@ -19,15 +19,15 @@
 \documentclass[letterpaper]{article}
 
 
-%% Compatibility & formatting %%
+%% Compatibility, layout, and typography %%
 \usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better
 \usepackage{lmodern}  % improves display of text
-\usepackage[utf8]{inputenc}  % allows LaTeX to process non-ASCII characters correctly
 \usepackage[english]{babel}  % sets language to American English
-
 \usepackage{geometry}  % useful for setting page dimensions and layout
 \geometry{left=1in, right=1in}
 \usepackage{microtype}  % improves typographic details (e.g., kerning)
+\usepackage{ellipsis}  % adjusts spacing of ellipses before punctuation
+\usepackage{fnpct}  % adjusts kerning of footnote marks (superscripts) before commas or periods
 
 
 %% Images %%
@@ -41,6 +41,11 @@
 %\caption{[insert caption]}
 %\label{p1_relevantname}
 %\end{figure}
+
+
+%% Tables %%
+%\usepackage{booktabs}
+%\usepackage{tabularx}
 
 
 %% Math %%
@@ -120,20 +125,19 @@
 \usepackage{blindtext}
 
 
+% Use \isitdefined to check if a command is defined.
+\newcommand*{\isitdefined}[1]{\%\% command `#1' does \ifcsname#1\endcsname\else NOT \fi exist \%\%}
+% Example:
+% \isitdefined{potato}
+
+
 %% Enables hyperlinks %%
 \usepackage{hyperref}  % load last!
 
 
 \begin{document}
-
-% Check if command `CommandName` is already defined
-%\ifdefined\CommandName defined\else undefined\fi
-
-
 \begin{enumerate}
 	\item
 	\blindtext
-	
 \end{enumerate}
-
 \end{document}
