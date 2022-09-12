@@ -16,7 +16,7 @@
 
 
 
-\documentclass[letterpaper]{article}
+\documentclass[letterpaper, fleqn]{article}
 
 
 %% Compatibility, layout, and typography %%
@@ -51,6 +51,8 @@
 %% Math %%
 \usepackage{mathtools,amssymb,amsthm}  % mathtools loads amsmath
 
+\allowdisplaybreaks[1]  % allows page breaks within amsmath environments; optional value from 1-4 sets permissibility (4 being the highest)
+
 \mathchardef\mhyphen="2D  % hyphen for math mode (credit to Gernot Salzer)
 
 \newcommand*{\Complex}{\mathbb{C}}
@@ -69,7 +71,6 @@
 
 
 %% Graphs %%
-\usepackage[usenames]{xcolor}  % for listings package color settings; load before tikz
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
@@ -93,7 +94,7 @@
 	morekeywords={True,False},
 	commentstyle=\color{gray},
 	keywordstyle=\color{blue},
-	stringstyle=\color{red},
+	stringstyle=\color{teal},
 	basicstyle=\small\ttfamily,
 	showstringspaces=false,
 	rulecolor=\color{black}
