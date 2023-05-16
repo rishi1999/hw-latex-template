@@ -61,10 +61,10 @@
 % Use \phanrel to insert an invisible relation operator to align an equation split across two lines.
 \newcommand*{\phanrel}{\mathrel{\phantom{=}}}
 % Example:
-% \begin{align*}
-%     &\phanrel \text{a very long expression} \\
-%     &= \text{another long expression}
-% \end{align*}
+%\begin{align*}
+%	&\phanrel \text{a very long expression} \\
+%	&= \text{another long expression}
+%\end{align*}
 
 \newcommand*{\Complex}{\mathbb{C}}
 \newcommand*{\Reals}{\mathbb{R}}
@@ -79,7 +79,7 @@
 % Use \set for set notation. Optional size argument accepted.
 \DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\,\def\suchthat{\;\delimsize|\;}#1\,}
 % Example:
-% \[\set[\bigg]{\frac{x^2}{2} \suchthat x > 0}\]
+%\[\set[\bigg]{\frac{x^2}{2} \suchthat x > 0}\]
 
 
 %% Graphs %%
@@ -95,7 +95,7 @@
 % Use \LongState to replace \State when the contents of the line overflow. This preserves the indentation level of the first line.
 \newcommand*{\LongState}[2]{\State\parbox[t]{\dimexpr\linewidth-\dimexpr\algorithmicindent*#1}{#2\strut}}  % inspired by a macro designed by TeX.SX user Werner
 % Example:
-% \LongState{2}{very long line that needs to be indented 2 levels}
+%\LongState{2}{very long line that needs to be indented 2 levels}
 
 \usepackage{fancyvrb}
 \usepackage{listings}
@@ -138,10 +138,11 @@
 \usepackage{blindtext}
 
 
+%% Macro writing %%
 % Use \isitdefined to check if a command is defined.
 \newcommand*{\isitdefined}[1]{\%\% command `#1' does \ifcsname#1\endcsname\else NOT \fi exist \%\%}
 % Example:
-% \isitdefined{potato}
+%\isitdefined{potato}
 
 
 %% Enables hyperlinks %%
