@@ -23,6 +23,7 @@
 \usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better
 \usepackage{lmodern}  % improves display of text
 \usepackage[english]{babel}  % sets language to American English
+%\usepackage{csquotes}  % for formal quotations
 \usepackage{geometry}  % useful for setting page dimensions and layout
 \geometry{left=1in, right=1in, bottom=1in}
 \usepackage{microtype}  % improves typographic details (e.g., kerning)
@@ -49,26 +50,36 @@
 
 
 %% Math %%
-\usepackage{mathtools,amssymb,amsthm}  % mathtools loads amsmath
+\usepackage{mathtools, amssymb, amsthm}  % mathtools loads amsmath
 
 \allowdisplaybreaks[1]  % allows page breaks within amsmath environments; optional value from 1-4 sets permissibility (4 being the highest)
 
-\mathchardef\mhyphen="2D  % hyphen for math mode (credit to Gernot Salzer)
+%\mathchardef\mhyphen="2D  % hyphen for math mode (credit to Gernot Salzer)
 \renewcommand*{\emptyset}{\varnothing}  % prettier empty set symbol
+%\usepackage{bm}  % use \bm for bold math symbols
+
+% Use \phanrel to insert an invisible relation operator to align an equation split across two lines.
+\newcommand*{\phanrel}{\mathrel{\phantom{=}}}
+% Example:
+% \begin{align*}
+%     &\phanrel \text{a very long expression} \\
+%     &= \text{another long expression}
+% \end{align*}
 
 \newcommand*{\Complex}{\mathbb{C}}
 \newcommand*{\Reals}{\mathbb{R}}
 \newcommand*{\Rationals}{\mathbb{Q}}
 \newcommand*{\Integers}{\mathbb{Z}}
 \newcommand*{\Naturals}{\mathbb{N}}
+
 \DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
-% Use \set for set notation. Starred version \set* automatically resizes with contents.
+% Use \set for set notation. Optional size argument accepted.
 \DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\,\def\suchthat{\;\delimsize|\;}#1\,}
 % Example:
-% $\set{x \suchthat x > 0}$
+% \[\set[\bigg]{\frac{x^2}{2} \suchthat x > 0}\]
 
 
 %% Graphs %%
@@ -78,7 +89,7 @@
 
 %% Algorithms %%
 \usepackage{algorithm}  % needed to float algorithms
-\usepackage{algpseudocode}  % loads algorithmicx package as well
+\usepackage{algpseudocode}  % loads algorithmicx package as well; use option ``noend'' to supress block ending lines
 \newcommand*{\algorithmautorefname}{Algorithm}  % for hyperref's autoref macro
 
 % Use \LongState to replace \State when the contents of the line overflow. This preserves the indentation level of the first line.
