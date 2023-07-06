@@ -20,8 +20,8 @@
 
 
 %% Compatibility, layout, and typography %%
-\usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better
 \usepackage{lmodern}  % improves display of text
+\usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better; load after fonts if possible
 \usepackage[english]{babel}  % sets language to American English
 %\usepackage{csquotes}  % for formal quotations
 \usepackage{geometry}  % useful for setting page dimensions and layout
@@ -45,7 +45,7 @@
 
 
 %% Tables %%
-%\usepackage{booktabs}
+\usepackage{booktabs}
 %\usepackage{tabularx}
 
 
@@ -83,8 +83,8 @@
 
 
 %% Graphs %%
-\usepackage{tikz}
-\usetikzlibrary{positioning}
+%\usepackage{tikz}
+%\usetikzlibrary{positioning}
 
 
 %% Algorithms %%
@@ -97,7 +97,7 @@
 % Example:
 %\LongState{2}{very long line that needs to be indented 2 levels}
 
-\usepackage{fancyvrb}
+%\usepackage{fancyvrb}
 \usepackage{listings}
 \renewcommand*{\lstlistingname}{Algorithm}
 \lstset{
