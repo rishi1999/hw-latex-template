@@ -19,16 +19,16 @@
 \documentclass[letterpaper, fleqn]{article}
 
 
-%% Compatibility, layout, and typography %%
+%% Layout and typography %%
 \usepackage{lmodern}  % improves display of text
 \usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better; load after fonts if possible
 \usepackage[english]{babel}  % sets language to American English
+\AddBabelHook{frspacing}{afterextras}{\frenchspacing}  % enable single sentence spacing
 %\usepackage{csquotes}  % for formal quotations
 \usepackage{geometry}  % useful for setting page dimensions and layout
 \geometry{left=1in, right=1in, bottom=1in}
-\usepackage{caption}  % fixes table--caption spacing in article class
-\frenchspacing
-\usepackage{microtype}  % improves typographic details (e.g., kerning)
+\usepackage{caption}  % fixes table–caption spacing in article class
+\usepackage[tracking]{microtype}  % improves typographic details (e.g., kerning)
 \usepackage{fnpct}  % adjusts kerning of footnote marks (superscripts) before commas or periods
 
 
@@ -37,7 +37,7 @@
 \graphicspath{{./images/}}  % location of images in file system
 
 % Example:
-%\begin{figure}[htbp]
+%\begin{figure}[bhpt]
 %\centering
 %\includegraphics[width=0.8\linewidth]{p1_1}
 %\caption{[insert caption]}
@@ -78,7 +78,7 @@
 \DeclareMathOperator*{\argmin}{arg\,min}
 
 % Use \set for set notation. Optional size argument accepted.
-\DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\,\def\suchthat{\;\delimsize|\;}#1\,}
+\DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\mkern1.5mu\def\suchthat{\;\delimsize|\;}#1\mkern1.5mu}
 % Example:
 %\[\set[\bigg]{\frac{x^2}{2} \suchthat x > 0}\]
 
@@ -115,7 +115,7 @@
 }
 
 % Example:
-%\begin{lstlisting}[title=My Title, label=my_label, float=htbp]
+%\begin{lstlisting}[title=My Title, label=my_label, float=bhpt]
 %	print("Hello World!")
 %\end{lstlisting}
 
@@ -123,12 +123,12 @@
 %% Fancy header %%
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead[L]{Rishi Advani}
-\fancyhead[C]{MATH [todo class number] --- Homework [todo hw number]}
-\fancyhead[R]{[todo date]}  % e.g., "January 10, 1938"
+\fancyhead[L]{Rishi Advani}  % TODO update
+\fancyhead[C]{MATH 101 --- Homework 1}  % TODO update
+\fancyhead[R]{January 10, 1938}  % TODO update
 \fancyfoot{}
 %\fancyfoot[L]{Collaborators: N/A}
-%\renewcommand*{\footrulewidth}{0.5pt}
+%\renewcommand*{\footrulewidth}{0.5pt}  % uncomment if you have collaborators
 
 
 %% Alternate paragraph layout %%
@@ -136,7 +136,7 @@
 
 
 %% Dummy text %%
-\usepackage{blindtext}
+\usepackage[math]{blindtext}
 
 
 %% Macro writing %%
@@ -152,8 +152,5 @@
 
 
 \begin{document}
-\begin{enumerate}
-	\item
-	\blindtext
-\end{enumerate}
+\Blindlist{enumerate}[8]
 \end{document}
