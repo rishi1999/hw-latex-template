@@ -23,7 +23,11 @@
 
 %%% Layout and typography %%%
 
-\usepackage{lmodern}  % improves display of text
+\usepackage[largesc, theoremfont]{newpxtext}  % package author wants this loaded after `babel`, but this doesn't seem necessary
+\usepackage[amsthm, vvarbb, noamssymbols]{newpxmath}  % package author has `fontenc` loaded before this, but it's unclear if this is necessary
+\let\Bbbk\relax  % `\Bbbk` will be redefined by `amssymb` package
+%\usepackage{lmodern}  % alternative to `newpx` packages
+
 \usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better; load after fonts if possible
 \usepackage[english]{babel}  % sets language to American English
 \AddBabelHook{frspacing}{afterextras}{\frenchspacing}  % enable single sentence spacing
@@ -61,7 +65,8 @@
 %%% Math %%%
 
 \usepackage{mathtools}  % also loads `amsmath` package
-\usepackage{amssymb, amsthm}
+\usepackage{amssymb}
+%\usepackage{amsthm}  % do not load if using `newpx` packages
 
 \allowdisplaybreaks[1]  % allows page breaks within `amsmath` environments; optional value sets permissibility (min=1, max=4)
 
