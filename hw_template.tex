@@ -31,7 +31,7 @@
 \ifLM
 \usepackage{lmodern}
 \else
-\usepackage[largesc, theoremfont]{newpxtext}  % package author wants this loaded after `babel`, but this doesn't seem necessary
+\usepackage[theoremfont, trueslanted, largesc]{newpxtext}  % package author wants this loaded after `babel`, but this doesn't seem necessary
 \usepackage[amsthm, vvarbb, noamssymbols]{newpxmath}  % package author has `fontenc` loaded before this, but it's unclear if this is necessary
 \let\Bbbk\relax  % `\Bbbk` will be redefined by `amssymb` package
 \fi
