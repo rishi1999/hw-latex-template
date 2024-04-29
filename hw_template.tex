@@ -28,12 +28,15 @@
 
 %%% Layout and typography %%%
 
+\usepackage{mathtools}  % also loads `amsmath` package
+\usepackage{amssymb}
+\usepackage{amsthm}  % load before `newpxmath` package
+
 \ifLM
 \usepackage{lmodern}
 \else
 \usepackage[theoremfont, trueslanted, largesc]{newpxtext}  % package author wants this loaded after `babel`, but this doesn't seem necessary
-\usepackage[amsthm, vvarbb, noamssymbols]{newpxmath}  % package author has `fontenc` loaded before this, but it's unclear if this is necessary
-\let\Bbbk\relax  % `\Bbbk` will be redefined by `amssymb` package
+\usepackage[vvarbb, noamssymbols]{newpxmath}  % package author has `fontenc` loaded before this, but it's unclear if this is necessary
 \fi
 
 \usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better; load after fonts if possible
@@ -71,10 +74,6 @@
 
 
 %%% Math %%%
-
-\usepackage{mathtools}  % also loads `amsmath` package
-\usepackage{amssymb}
-\ifLM\usepackage{amsthm}\fi
 
 \allowdisplaybreaks[1]  % allows page breaks within `amsmath` environments; optional value sets permissibility (min=1, max=4)
 
