@@ -41,11 +41,14 @@
 
 \usepackage[T1]{fontenc}  % allows LaTeX to output non-ASCII characters better; load after fonts if possible
 \usepackage[english]{babel}  % sets language to American English
-\AddBabelHook{frspacing}{afterextras}{\frenchspacing}  % enable single sentence spacing
+\AddBabelHook{frspacing}{afterextras}{\frenchspacing}  % enables single sentence spacing
 %\usepackage{csquotes}  % for formal quotations
 
-%\usepackage{parskip}  % enables alternate paragraph layout
 \usepackage[hmargin=1.2in, marginparwidth=1in, marginparsep=0.1in, vmargin=1in, headheight=0.6in, headsep=0.3in, footskip=0.5in, heightrounded]{geometry}  % useful for setting page dimensions and layout
+%\usepackage{parskip}  % enables alternate paragraph layout
+\usepackage{ragged2e}  % adds improved flush/ragged alignment commands
+\newcommand{\sidenote}[1]{\marginpar[\RaggedLeft\footnotesize #1]{\RaggedRight\footnotesize #1}}  % use for sidenotes
+
 \usepackage{ftcap}  % fixes table–caption spacing in `article` class
 \usepackage[tracking]{microtype}  % improves typographic details (e.g., kerning)
 \usepackage{fnpct}  % adjusts kerning of footnote marks (superscripts) before commas or periods
@@ -80,7 +83,7 @@
 
 %\mathchardef\mhyphen="2D  % hyphen for math mode (credit to Gernot Salzer)
 \renewcommand*{\emptyset}{\varnothing}  % prettier empty set symbol
-\ifLM\newcommand*{\transp}{\mathsf{T}}\fi
+\ifLM\newcommand*{\transp}{\mathsf{T}}\fi  % use for matrix transpose
 
 %\usepackage{bm}  % use `\bm` for bold math symbols
 
