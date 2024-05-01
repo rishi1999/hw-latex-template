@@ -43,6 +43,8 @@
 \usepackage[english]{babel}  % sets language to American English
 \AddBabelHook{frspacing}{afterextras}{\frenchspacing}  % enable single sentence spacing
 %\usepackage{csquotes}  % for formal quotations
+
+%\usepackage{parskip}  % enables alternate paragraph layout
 \usepackage[hmargin=1.2in, marginparwidth=1in, marginparsep=0.1in, vmargin=1in, headheight=0.6in, headsep=0.3in, footskip=0.5in, heightrounded]{geometry}  % useful for setting page dimensions and layout
 \usepackage{ftcap}  % fixes table–caption spacing in `article` class
 \usepackage[tracking]{microtype}  % improves typographic details (e.g., kerning)
@@ -163,8 +165,6 @@
 
 
 %%% Miscellaneous %%%
-
-%\usepackage{parskip}  % enables alternate paragraph layout
 
 % Use `\isitdefined` to check if a command is defined.
 \newcommand*{\isitdefined}[1]{\%\% command `#1' does \ifcsname#1\endcsname\else NOT \fi exist \%\%}
