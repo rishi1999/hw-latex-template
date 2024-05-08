@@ -1,0 +1,80 @@
+\begin{enumerate}
+	\item \label{item:nonsense}
+	We want to show that $x > \log_2 x$ for all $x \in \Reals^+$. First, we note that
+	\[\int_1^\infty \tan(\alpha) \, d\alpha = \sum_{\beta=0}^\infty \Bigl( \beta \cdot \argmin_{\gamma \in \Complex}\bigl(1938\gamma^3 + \gamma\bigr) \Bigr)\]
+	by the Borsuk--Ulam theorem. Furthermore, $1 = 1 + 1$ by the Banach--Tarski paradox, and thus, we are done\footnote{This same technique can be easily adapted to prove P=NP.}.\qed
+	
+	\item
+	We want to compute the derivative of $\sin(e^x)$. We have the following.
+	\begin{align*}
+		\frac{d}{dx} \sin(e^x)
+		&= \cos(e^x) \cdot \frac{d}{dx} e^x \qquad \text{(chain rule)} \\
+		&= \cos(e^x) \cdot e^x
+	\end{align*}
+	
+	\item
+	\textit{See margin.}\sidenote{I have discovered a truly beautiful solution to this problem, but unfortunately, it simply will not fit in this tiny margin.}
+	
+	\item
+	Let $A$ be an orthogonal matrix. We want to show that $A^2$ is also orthogonal. We have the following.
+	\begin{align*}
+		\bigl(A^2\bigr)^\transp \bigl(A^2\bigr)
+		&= A^\transp A^\transp A A \\
+		&= A^\transp I A \qquad \text{(orthogonality of $A$)} \\
+		&= A^\transp A \\
+		&= I \qquad \text{(orthogonality of $A$)}
+	\end{align*}
+	Thus, $A^2$ is orthogonal.\qed
+	
+	\item \label{item:TF}
+	\textit{I was unable to find the exact answer to this problem, but I was able to narrow it down to two possibilities (see Table~\ref{tab:TF}).}
+	
+	\begin{table}[bhpt]
+		\centering
+		\caption{Possible answers to Problem~\ref{item:TF}.}
+		\label{tab:TF}
+		\begin{tabular}{ p{2.3in} p{2.3in} }
+			\toprule
+			True & False \\
+			\midrule
+			This one seems likely because a lot of mathematical statements are true. For example, $1 + 1 = 2$ and $1 \times 0 = 0$ are both true statements. & This one also makes a lot of sense to me because sometimes things are false. An example of a false statement would be ``I am confident in my solution to Problem~\ref{item:nonsense}''. \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\item
+	We simplify the expression as follows.
+	\begin{align*}
+		&\phanrel \sqrt{1938^2 + 62^2 + 1938 \times 124 + \sin^2(1938) + \cos^2(1938) - 1} \\
+		&= \sqrt{1938^2 + 62^2 + 1938 \times 124 + 1 - 1} \\
+		&= \sqrt{1938^2 + 2 \times 1938 \times 62 + 62^2} \\
+		&= \sqrt{(1938 + 62)^2} \\
+		&= 1938 + 62 \\
+		&= 2000
+	\end{align*}
+	
+	\item
+	Below is a demonstration of the execution of the merge sort algorithm:
+	\begingroup
+	\renewcommand{\arraystretch}{2}
+	\Large
+	\[
+	\begin{array}{*{16}{c}}
+			& 1 && 5 && 2 && 4 && 7 && 8 && 6 && 3 \\
+		\hookrightarrow & & \mathrlap{1}5 &&&& \mathrlap{2}4 &&&& \mathrlap{7}8 &&&& \mathrlap{6}3 & \\
+		\hookrightarrow & &&& \mathrlap{1}\mathrlap{5}\mathrlap{2}4 &&&&&&&& \mathrlap{7}\mathrlap{8}\mathrlap{6}3 &&& \\
+		\hookrightarrow & &&&&&&& \mathrlap{1}\mathrlap{5}\mathrlap{2}\mathrlap{4}\mathrlap{7}\mathrlap{8}\mathrlap{6}3 &&&&&&& \\
+		\hookrightarrow & 1 && 2 && 3 && 4 && 5 && 6 && 7 && 8
+	\end{array}
+	\]
+	\endgroup
+	
+	\item
+	\textit{This proof is left as an exercise to the grader.}
+	
+	\item
+	We want to find the limit of $f(x) = \frac{\sin x}{\ln x}$ as $x$ tends to infinity. Let $g(x) = -\frac{1}{\ln x}$ and $h(x) = \frac{1}{\ln x}$. Note that $f$ is bounded below by $g$ and above by $h$. Since the logarithm function increases without bound, we have $\lim_{x \to \infty} g(x) = \lim_{x \to \infty} h(x) = 0$. Thus, by the squeeze theorem, we have $\lim_{x \to \infty} f(x) = 0$.
+	
+	\item
+	\textit{Sorry, Professor --- my \rlap{dog}\rule[\dimexpr 0.5ex - 0.4pt \relax]{\widthof{dog}}{0.8pt} \textbf{cyber-dog} ate my solution to this problem.}
+\end{enumerate}
